@@ -16,6 +16,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Version private Long version;
     private String firstname;
     private String lastname;
     @JsonIgnore
@@ -27,7 +28,7 @@ public class Author {
 
     public Author() {
         super();
-        this.posts = new ArrayList<Post>();
+        this.posts = new ArrayList<>();
     }
 
     public Author(String username, String firstname, String lastname, String password) {
